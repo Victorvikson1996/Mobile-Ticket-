@@ -28,13 +28,15 @@ export default function App() {
     _loadAssetsAsync()
   })
 
+  const screenOptions = {
+    headerShown: false,
+  }
+
   return assetsLoaded ? (
     <NavigationContainer>
       <StatusBar barStyle="light-content"></StatusBar>
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
+        screenOptions={screenOptions}
         initialRouteName="Featured"
       >
         <Stack.Screen name="Featured" component={Tabs} />

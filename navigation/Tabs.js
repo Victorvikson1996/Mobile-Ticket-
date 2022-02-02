@@ -1,11 +1,11 @@
-import React from 'react';
-import { View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Featured, Schedule, Tickets, Mine } from '../screens';
-import { COLORS, SIZES, FONTS, icons } from '../constants';
-import { McText, McIcon } from '../components';
+import React from 'react'
+import { View } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { Featured, Schedule, Tickets, Mine } from '../screens'
+import { COLORS, SIZES, FONTS, icons } from '../constants'
+import { McText, McIcon } from '../components'
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 const TabIcon = ({ focused, icon }) => {
   return (
@@ -19,8 +19,8 @@ const TabIcon = ({ focused, icon }) => {
         }}
       />
     </View>
-  );
-};
+  )
+}
 const TabLabel = ({ focused, text }) => {
   return focused ? (
     <McText
@@ -34,27 +34,30 @@ const TabLabel = ({ focused, text }) => {
     </McText>
   ) : (
     <View />
-  );
-};
+  )
+}
+const screenOptions = {
+  headerShown: false,
+  tabBarShowLabel: true,
+  tabBarStyle: [
+    {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      elevation: 0,
+      backgroundColor: COLORS.tabBar,
+      opacity: 0.9,
+      borderTopColor: 'transparent',
+      height: 111,
+      borderRadius: SIZES.radius,
+    },
+  ],
+}
 
 const Tabs = ({ params }) => {
   return (
-    <Tab.Navigator
-      tabBarOptions={{
-        style: {
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          elevation: 0,
-          backgroundColor: COLORS.tabBar,
-          opacity: 0.9,
-          borderTopColor: 'transparent',
-          height: 111,
-          borderRadius: SIZES.radius,
-        },
-      }}
-    >
+    <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
         name="Featured"
         component={Featured}
@@ -104,7 +107,7 @@ const Tabs = ({ params }) => {
         }}
       />
     </Tab.Navigator>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs
