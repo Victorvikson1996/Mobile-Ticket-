@@ -155,7 +155,7 @@ const Featured = ({ navigation }) => {
           <View style={{ marginLeft: 22 }}>
             <McText h3>Claim NFT Free Ticket</McText>
             <McText body4 style={{ width: 200 }}>
-              Share Web3 Event with friends and get NFT ticket
+              Share Web3 Event with friends and get Free Token
             </McText>
           </View>
         </View>
